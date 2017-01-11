@@ -81,6 +81,9 @@ int main(int argc, char* argv[]) {
         of << cpv[i].first << "," << cpv[i].second << "," << jsvmh[i] << std::endl;
     of.close();
     
+    // we can also compute the similarity based on the 
+    // original document ngrams
+    // this is available if lsh.minhash_corpus() was called with keep_ngrams set to true
     of.open("ngram_sim.csv");
     std::cerr << "Computing ngram similarity: " << cpv.size() << std::endl;
     lsh.compute_ngram_similarities();
